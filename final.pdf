@@ -1,0 +1,87 @@
+\documentclass[12pt]{article}
+
+\usepackage[english]{babel}
+\usepackage[utf8x]{inputenc}
+\usepackage{amsmath}
+\usepackage{graphicx}
+
+\title{Proof of Convergence of Infinite Series}
+\author{Chol Hyon Yoon}
+
+\begin{document}
+\maketitle
+Definitions, Application of Various Convergence Test of Infinite Series
+
+\begin{abstract}
+This document is for final project which shows how my final project works accordingly with some mathematical convergence theorem of infinite series
+\end{abstract}
+
+\section{Introduction}
+
+There are a lot of possible tests that we can use for proving that if the given infinite series is convergent/divergent. For example, 
+Geometric Series Test: If $a_k = a r^{n-1}$ then the series $\sum_{k=1}^{\infty}a_k$ is geometric series which converges only if $|r|<1$ in which case
+\[
+\sum_{n=1}^{\infty}ar^{n-1}=\sum_{n=0}^{\infty}ar^n = a + ar + ar^2 + \dots   = {a \over 1-r}, |r|<1
+\]
+This is the definition of geometric series and test if the geometric series converges/diverges. There are various test i will implement in this project such as P-Series Test, Divergence Test, Integral Test, Comparison Test, Limit Comparison Test, Ratio Test, and Root Test. Inputs are going to be equation of series and type of test the user want to test: GST, PST, DT, IT, CT, LTC, RT, and ROOT are the abbreviations for various tests. If given test is successful it will return True other wise False. True means that the infinite sum of the series is convergent, otherwise divergent. 
+
+\section{Definitions}
+\label{sec:def}
+\subsection{Geometric Series Test}
+\subsection{P-Series Test}
+\subsection{Divergence Test}
+\subsection{Integral Test}
+\subsection{Comparison Test}
+\subsection{Limit Compariston Test}
+\subsection{Ratio Test}
+\subsection{Root Test}
+
+\begin{table}
+\caption{Abbreviation List}
+\centering
+\begin{tabular}{c c}
+\hline\hline
+Abbreviation & Definition \\ [0.5ex]
+\hline
+GST & Geometric Series Test \\
+PST & P-Series Test \\
+DT & Divergence Test \\
+IT & Integral Test \\
+CT & Comparison Test \\
+LTC & Limit Comparison Test \\
+RT & Ratio Test \\
+ROOT & Root Test \\
+\hline
+\end{tabular}
+\label{table:abbv}
+\end{table}
+
+\section{Examples: Application of Tests}
+\begin{enumerate}
+\item $\sum_{n=0}^{\infty}8r^{n}$ which converges to ${8 \over 1-r}, \forall r  \quad s.t. \quad |r|<1$ otherwise diverges according to GST.
+\item $\sum_{n=0}^{\infty}{3\over 2n^P}$ which converges if $P>1$ otherwise diverges according to P-Series Test known as Positive Series Test.
+\item \dots will be added few more.
+\end{enumerate}
+
+\section{Computional Mathematical Theory}
+\subsection{Algorithms}
+\begin{enumerate}
+\item steps to return True of False will be added
+\item \dots
+\end{enumerate}
+\subsection{Examples: Applicaions of Algorithms}
+\begin{enumerate}
+\item example using created def or class will be added
+\item \dots
+\end{enumerate}
+
+\section{Conclusion}
+\subsection{Summary}
+\subsection{Sources}
+\begin{itemize}
+\item $http://www.math.montana.edu/~pernarow/M182/2007Sp/notes/Series_Summary.pdf$
+\item $http://www1.maths.leeds.ac.uk/latex/TableHelp1.pdf$
+\item $http://en.wikibooks.org/wiki/LaTeX/Mathematics$
+\end{itemize}
+
+\end{document}
