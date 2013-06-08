@@ -4,6 +4,7 @@
 \usepackage[utf8x]{inputenc}
 \usepackage{amsmath}
 \usepackage{graphicx}
+\usepackage{letltxmacro}
 
 \title{Proof of Convergence of Infinite Series}
 \author{Chol Hyon Yoon}
@@ -23,18 +24,7 @@ Geometric Series Test: If $a_k = a r^{n-1}$ then the series $\sum_{k=1}^{\infty}
 \[
 \sum_{n=1}^{\infty}ar^{n-1}=\sum_{n=0}^{\infty}ar^n = a + ar + ar^2 + \dots   = {a \over 1-r}, |r|<1
 \]
-This is the definition of geometric series and test if the geometric series converges/diverges. There are various test i will implement in this project such as P-Series Test, Divergence Test, Integral Test, Comparison Test, Limit Comparison Test, Ratio Test, and Root Test. Inputs are going to be equation of series and type of test the user want to test: GST, PST, DT, IT, CT, LTC, RT, and ROOT are the abbreviations for various tests. If given test is successful it will return True other wise False. True means that the infinite sum of the series is convergent, otherwise divergent. 
-
-\section{Definitions}
-\label{sec:def}
-\subsection{Geometric Series Test}
-\subsection{P-Series Test}
-\subsection{Divergence Test}
-\subsection{Integral Test}
-\subsection{Comparison Test}
-\subsection{Limit Compariston Test}
-\subsection{Ratio Test}
-\subsection{Root Test}
+This is the definition of geometric series and test if the geometric series converges/diverges. There are various test i will implement in this project such as P-Series Test, Divergence Test, Integral Test, Comparison Test, Limit Comparison Test, Ratio Test, and Root Test. Inputs are going to be equation of series and type of test the user want to test: GST, PST, DT, IT, CT, LTC, RT, and ROOT are the abbreviations for various tests. If given test is successful it will return True other wise False. True means that the infinite sum of the series is convergent, otherwise divergent.
 
 \begin{table}
 \caption{Abbreviation List}
@@ -56,11 +46,59 @@ ROOT & Root Test \\
 \label{table:abbv}
 \end{table}
 
+\section{Definitions}
+\label{sec:def}
+
+\subsection{Geometric Series Test}
+If $a_k = a r^{n-1}$ then the series $\sum_{k=1}^{\infty}a_k$ is geometric series which converges only if $|r|<1$ in which case
+\[
+\sum_{n=1}^{\infty}ar^{n-1}=\sum_{n=0}^{\infty}ar^n = a + ar + ar^2 + \dots   = {a \over 1-r}, |r|<1
+\]
+
+\subsection{P-Series Test}
+If $p > 1$ the series $\sum{1 \over n^{p}}$ converges. If $p \leq 1$ the series diverges.
+
+\subsection{Divergence Test}
+If $\lim_{n \to \infty} a_n \neq 0$ then ehs series $\sum_{n=1}^{\infty} a_n$ diverges.
+
+\subsection{Integral Test}
+Suppose $a_n = f(n)$ where $f(x)$ is a positive continuousewhich decreses for all $x \geq 1$ Then
+\[
+\sum_{n=1}^{\infty} a_n \text{ and } \int\limits_1^\infty f(x) dx
+\
+\]
+either both converge or both diverge.The same holds if $f(x)$ decreases for all $x > b$ where $b \geq 1$
+
+\subsection{Comparison Test} 
+Let $N$ be the same integer $N \geq 1$. Then
+\begin{enumerate}
+\item if $0 < a_n \leq b_n \forall n \geq N$ and $\sum_{n=1}^{\infty} b_n$ converges then $\sum_{n=1}^{\infty} a_n$ converges
+\item if $0 < b_n \leq a_n \forall n \geq N$ and $\sum_{n=1}^{\infty} b_n$ diverges then $\sum_{n=1}^{\infty} a_n$ diverges
+\end{enumerate}
+
+\subsection{Limit Compariston Test}
+$\lim_{n \to \infty} {a_n \over b_n} = c > 0$
+Then either both series $\sum a_n$ and $\sum b_n$ converge or they both diverge.
+
+\subsection{Ratio Test}
+\begin{enumerate}
+\item If $\lim_{n \to \infty} |{a_{n+1} \over a_n}| = L < 1$ then $\sum a_n$ converges absolutely (converges)
+\item If $\lim_{n \to \infty} |{a_{n+1} \over a_n}| = L > 1$ or $L = \infty$ then $\sum a_n$ diverges
+\item If $\lim_{n \to \infty} |{a_{n+1} \over a_n}| = L = 1$ then test fails and nothing can be said
+\end{enumerate}
+
+\subsection{Root Test}
+\begin{enumerate}
+\item $\lim_{n \to \infty} \sqrt[n]{|a_n|} = L < 1$ then $\sum a_n$ coverges absolutely (converges)
+\item $\lim_{n \to \infty} \sqrt[n]{|a_n|} = L > 1$ or $L = \infty$ then $\sum a_n$ diverges
+\item $\lim_{n \to \infty} \sqrt[n]{|a_n|} = L = 1$ then the test fails, nothing can be said
+\end{enumerate}
+
 \section{Examples: Application of Tests}
 \begin{enumerate}
 \item $\sum_{n=0}^{\infty}8r^{n}$ which converges to ${8 \over 1-r}, \forall r  \quad s.t. \quad |r|<1$ otherwise diverges according to GST.
 \item $\sum_{n=0}^{\infty}{3\over 2n^P}$ which converges if $P>1$ otherwise diverges according to P-Series Test known as Positive Series Test.
-\item \dots will be added few more.
+\item $\sum_{n=1}^{\infty}{1 \over n^2}$ converges so does $\sum_{n=1}^{\infty}{1 \over n^2+3}$ because ${1 \over n^2+3} < {1 \over n^2} \forall n$ which is definition of Compariston Test
 \end{enumerate}
 
 \section{Computional Mathematical Theory}
